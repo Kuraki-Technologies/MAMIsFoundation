@@ -1,27 +1,34 @@
-// Abstract BaseDAO class for generic database operations
+export interface IEntity {
+  id?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
 
-export abstract class BaseDAO<T> {
-    protected abstract tableName: string;
+export abstract class BaseDAO<T extends IEntity> {
+  protected tableName: string;
 
-    public async findAll(): Promise<T[]> {
-        // Implementation for fetching all records
-        return [];
-    }
+  constructor(tableName: string) {
+    this.tableName = tableName;
+  }
 
-    public async findById(id: string): Promise<T | null> {
-        // Implementation for fetching a record by ID
-        return null;
-    }
+  async create(entity: T): Promise<T> {
+    const id = Math.random().toString(36).substr(2, 9);
+    return { ...entity, id, createdAt: new Date() };
+  }
 
-    public async create(item: T): Promise<void> {
-        // Implementation for creating a new record
-    }
+  async findById(id: string): Promise<T | null> {
+    return null;
+  }
 
-    public async update(id: string, item: T): Promise<void> {
-        // Implementation for updating a record
-    }
+  async findAll(): Promise<T[]> {
+    return [];
+  }
 
-    public async delete(id: string): Promise<void> {
-        // Implementation for deleting a record
-    }
+  async update(id: string, entity: Partial<T>): Promise<T | null> {
+    return null;
+  }
+
+  async delete(id: string): Promise<boolean> {
+    return true;
+  }
 }

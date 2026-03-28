@@ -1,1 +1,35 @@
-{\n  "name": "mamifoundation",\n  "version": "1.0.0",\n  "description": "NGO website for MAMIsFoundation",\n  "main": "index.js",\n  "scripts": {\n    "test": "echo 'Error: no test specified' && exit 1"\n  },\n  "keywords": ["NGO", "website", "MAMIsFoundation"],\n  "author": "MAMIsFoundation Team",\n  "license": "ISC",\n  "dependencies": {\n    "express": "^4.17.1",\n    "mongoose": "^5.10.9",\n    "dotenv": "^8.2.0",\n    "cors": "^2.8.5"\n  }\n}
+{
+  "name": "mami-foundation-ngo",
+  "version": "1.0.0",
+  "description": "Madan Mina Sarvodaya Foundation - NGO Website",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx --tsconfig tsconfig.server.json server.ts",
+    "build": "vite build",
+    "preview": "vite preview",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.14",
+    "@vitejs/plugin-react": "^5.0.4",
+    "axios": "^1.13.6",
+    "cors": "^2.8.6",
+    "express": "^4.21.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.13.1",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.34.3",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.14.0",
+    "autoprefixer": "^10.4.21",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}
